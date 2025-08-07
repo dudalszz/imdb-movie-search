@@ -1,4 +1,4 @@
-# Nome do Projeto (ex: React Movie Search)
+# React Movie Search
 
 ## Descrição
 
