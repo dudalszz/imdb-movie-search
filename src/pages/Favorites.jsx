@@ -8,7 +8,7 @@ export default function Favorites() {
   if (favorites.length === 0) return <p>Nenhum filme favoritado.</p>;
 
   return (
-    <div>
+     <div className="favorites-background">
       <h1>Favoritos</h1>
       {favorites.map(movie => (
         <MovieCard key={movie.imdbID} movie={movie} />
