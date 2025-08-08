@@ -7,7 +7,7 @@ export default function MovieCard({ movie }) {
   const isFavorite = favorites.some(fav => fav.imdbID === movie.imdbID);
 
   return (
-    <div style={{ border: '1px solid #ccc', padding: 10, marginBottom: 10 }}>
+    <div className="movie-card">
       <h3>{movie.Title}</h3>
       <img src={movie.Poster} alt={movie.Title} width={100} />
       <div>

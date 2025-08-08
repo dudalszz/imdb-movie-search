@@ -44,9 +44,9 @@ export default function Home() {
   }, [page]);
 
   return (
-    <div>
+    <main className="home-background">
       <h1>Buscar Filmes</h1>
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleSearch} className="search-form">
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -78,6 +78,6 @@ export default function Home() {
           </button>
         </div>
       )}
-    </div>
+    </main>
   );
 }
