@@ -21,7 +21,8 @@ export default function Details() {
   if (loading) return <p>Carregando...</p>;
   if (!movie) return <p>Filme não encontrado.</p>;
 
-  return (
+return (
+  <div className="home-background">
     <div className="details-container">
       <button className="btn-back" onClick={() => navigate(-1)}>← Voltar</button>
 
@@ -38,5 +39,7 @@ export default function Details() {
       <p><strong>Diretor:</strong> {movie.Director}</p>
       <p><strong>Sinopse:</strong> {movie.Plot}</p>
     </div>
-  );
+  </div>
+);
+
 }

@@ -47,8 +47,8 @@ nav a:focus {
 .home-background {
   position: relative;
   width: 100vw;         
-  height: 100vh;        
-  background-image: url('/capas.jpg'); /* ajuste o caminho da imagem */
+  min-height: 100vh;    /* Use min-height para evitar corte em telas maiores */
+  background-image: url('/capas.jpg');
   background-repeat: no-repeat;
   background-size: cover;          
   background-position: center center;
@@ -59,7 +59,7 @@ nav a:focus {
   z-index: 0;
 }
 
-/* Overlay escuro para legibilidade */
+/* Overlay escuro para legibilidade no fundo */
 .home-background::before {
   content: "";
   position: absolute;
@@ -129,20 +129,18 @@ button:disabled {
   transform: none;
 }
 
-/* Container de detalhes do filme */
+/* Container de detalhes do filme - fundo escuro e legível */
 .details-container {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 24px 30px;
-  background-color: #1e1e1e;
+  position: relative;
+  background-color: rgba(30, 30, 30, 0.85); /* fundo escuro com transparência para suavizar */
   border-radius: 12px;
+  box-shadow: 0 0 25px rgba(214, 58, 58, 0.5);
   color: #e0e0e0;
-  box-shadow: 0 0 20px rgba(214, 58, 58, 0.3);
-  line-height: 1.6;
-}
-
-.search-form {
-  margin-bottom: 30px;
+  padding: 30px 40px;
+  max-width: 900px;
+  margin: 40px auto;
+  z-index: 10;
+  backdrop-filter: blur(6px); /* suaviza o fundo atrás do container */
 }
 
 /* Poster do filme */
@@ -162,7 +160,7 @@ button:disabled {
   align-items: center;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #1e1e1e; /* fundo escuro para destacar */
+  background-color: #1e1e1e;
   border-radius: 10px;
   box-shadow: 0 0 12px rgba(214, 58, 58, 0.35);
 }
@@ -201,7 +199,6 @@ div[style*="border: 1px solid"] {
   align-items: center;
   border: none;
 }
-
 
 div[style*="border: 1px solid"] h3 {
   margin: 0 0 8px 0;
@@ -255,6 +252,12 @@ div[style*="border: 1px solid"] button:focus {
   cursor: pointer;
 }
 
+/* Margem inferior para o formulário de busca */
+.search-form {
+  margin-bottom: 30px;
+}
+
+/* Responsividade para telas pequenas */
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -274,5 +277,11 @@ div[style*="border: 1px solid"] button:focus {
 
   main {
     padding: 20px 12px;
+  }
+
+  /* Ajuste do container de detalhes em mobile */
+  .details-container {
+    padding: 20px;
+    margin: 20px 10px;
   }
 }
